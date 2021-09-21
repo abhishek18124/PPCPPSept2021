@@ -10,13 +10,15 @@ int main() {
 
 	cin >> n;
 
-	int i = 100;
+	int i = 1;
 
 	while(i <= n) {
 
 		cout << i << " ";
 		i = i + 1;
 	}
+
+	
 
 	cout << endl;
 

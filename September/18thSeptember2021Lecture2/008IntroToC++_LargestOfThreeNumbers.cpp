@@ -15,7 +15,7 @@ int main() {
 	cout << "Enter value of c = ";
 	cin >> c;
 
-	if(a > b && a > c) {
+	if(a > b and a > c) {
 		cout << a << " is the largest." << endl;
 	} else if(b > c) {
 		cout << b << " is the largest." << endl;

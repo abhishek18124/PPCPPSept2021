@@ -10,7 +10,7 @@ int main() {
 	multi-line
 	comment.*/
 	
-	cout << "Hello world !" << endl << 100.27 << endl << 'a' << endl;
+	cout << "Hello world !" << endl << 100 << endl << 'a' << endl;
 	
 	return 0;
 }

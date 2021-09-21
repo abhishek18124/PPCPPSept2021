@@ -18,7 +18,7 @@ int main() {
 	int x = 9;
 	int y = 4;
 
-	cout << "x / y = " << x / (y * 1.0) << endl;
+	cout << "x / y = " << x / (y*1.0) << endl;
 
 	return 0;
 }

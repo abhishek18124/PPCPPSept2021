@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int a = 99;
+//   
 
 int main() {
 

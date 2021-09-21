@@ -17,7 +17,7 @@ int main() {
 
 	float si = (p * r * t) / 100.0;
 
-	cout << "Simple interest = " << si << endl;
+	cout << "Simple interest = "<< si << endl;
 
 	return 0;
 }

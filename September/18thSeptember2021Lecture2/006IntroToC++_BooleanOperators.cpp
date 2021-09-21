@@ -12,7 +12,7 @@ int main() {
 	cout << (x != y) << endl;
 	cout << (y == z) << endl;
 
-	bool b = false;
+	bool b = true;
 	cout << b << endl;
 
 	return 0;
