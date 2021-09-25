@@ -1,9 +1,9 @@
 /*
 
 1
-2 3
-4 5 6
-7 8 9 10
+1 2
+1 2 3
+1 2 3 4
 
 */
 
@@ -14,24 +14,22 @@ using namespace std;
 
 int main() {
 
-	int rows;
+	int n = 4;
 
-	cout << "Enter number of rows = ";
-	cin >> rows;
+	// cout << "Enter number of rows = ";
+	// cin >> n;
 
 	int i = 1;
-	int no = 1;
 	int j;
 
-	while(i <= rows) {
+	while(i <= n) {
 
 		// in the ith rows, print i *
 		j = 1;	
 		
 		while(j <= i) {
-			cout << no << " ";
+			cout << j << " ";
 			j = j+1;
-			no = no+1;
 		}
 		cout << endl;
 
