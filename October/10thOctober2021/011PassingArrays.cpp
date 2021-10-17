@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int sumOfArray(int A[], int n) {
+int sumOfArray(int B[], int n) {
 	int sum = 0;
 	for(int i=0; i<n; i++) {
-		sum += A[i];
+		sum += B[i];
 	}
 	return sum;
 }
