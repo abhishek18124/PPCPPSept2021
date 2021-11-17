@@ -55,7 +55,7 @@ void placeNQueens(int n, int* QPos, int r) {
 	// place the Qr
 
 	for(int j=0; j<n; j++) {
-		bool canPlace = true;
+		bool canPlace = true; // I am assuming jth column of row r is valid
 
 		for(int i=0; i<r; i++) {
 			if(QPos[i] == j || QPos[i] == j+(r-i) || QPos[i] == j-(r-i)) {
