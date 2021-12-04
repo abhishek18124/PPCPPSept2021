@@ -66,7 +66,7 @@ node* bubbleSort(node* head) {
 		node* cur = head;
 		node* prev = NULL;
 		node* tmp = NULL;
-		while(j < n-i && cur != NULL && cur->next != NULL) {
+		while(j < n-i) {
 			tmp = cur->next;
 			if(cur->data > tmp->data) {
 				// swap cur with tmp
