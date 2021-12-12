@@ -59,10 +59,75 @@ node* buildTree() {
 	return root;
 }
 
+bool checkBalance(node* root) {
+
+	// base case
+	if(!root) {
+		// empty tree is balanced 
+		return true;
+	}
+
+	// recursive case
+
+	// 1. check if the leftSubtree is balanced -- ask your friend
+	bool X = checkBalance(root->left);
+
+	// 2. check if the rightSubtree is balanced -- ask your friend
+	bool Y = checkBalance(root->right);
+
+	// 3. check if the root node is balanced
+	bool Z = abs(height(root->left)-height(root->right)) <= 1 ? true : false;
+
+	return X && Y && Z;
+}
+
+class Pair {
+public: 
+	bool isBalanced;
+	int height;
+};
+
+Pair checkBalanceEfficient(node* root) {
+
+	Pair p;
+
+	// base case
+	if(!root) {
+		// empty tree is balanced & has heigh equal to -1
+		p.isBalanced = true;
+		p.height = -1;
+		return p;
+	}
+
+	// recursive case
+
+	// 1. check if the leftSubtree is balanced & also compute its height -- ask your friend
+	Pair pL = checkBalanceEfficient(root->left);
+
+	// 2. check if the rightSubtree is balanced & also compute its height -- ask your friend
+	Pair pR = checkBalanceEfficient(root->right);
+
+	// 3. check if the root node is balanced
+	bool Z = abs(pL.height-pR.height) <= 1 ? true : false;
+
+	p.isBalanced = pL.isBalanced && pR.isBalanced && Z;
+	p.height = 1 + max(pL.height, pR.height);
+
+	return p;
+}
+
+
+
 int main() {
 
 	node* root = NULL;
 	root = buildTree();
+
+	checkBalance(root) ? cout << "true" << endl : 
+						 cout << "false" << endl;
+
+	checkBalanceEfficient(root).isBalanced ? cout << "true" << endl :
+						                     cout << "false" << endl;
  	
  	return 0;
  }

@@ -94,13 +94,8 @@ void levelOrderFormatted(node* root) {
 				q.push(front->right);
 			}
 		}
-
 	}
-
 	cout << endl;
-
-
-
 }
 
 int main() {

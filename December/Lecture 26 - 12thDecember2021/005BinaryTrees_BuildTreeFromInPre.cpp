@@ -69,14 +69,47 @@ void inorder(node* root) {
 	inorder(root->right);
 }
 
-int main() {
+int i = 0; // to iterate over the preOrder traversal
 
-	
-	node* root = NULL;
+node* buildTree(int* pre, int* in, int s, int e) {
+
+	// base case
+	if(s > e) {
+		// build an empty tree
+		return NULL;
+	}
+
+	int x = pre[i]; i++;
+	node* root = new node(x);
+
+	int k = -1;
+	for(int j=s; j<=e; j++) {
+		if(in[j] == x) {
+			k = j;
+			break;
+		}
+	}
+
+	// build the leftSubtree using the inOrder[s:k-1] -- ask your friend
+	root->left = buildTree(pre, in, s, k-1);
+
+	// build the rightSubtree using the inOrder[k+1:e] -- ask your friend
+	root->right = buildTree(pre, in, k+1, e);
+
+	return root;
+
+}
+
+int main() {
 
 	int pre[] = {10, 20, 40, 50, 70, 30, 60};
 	int in[]  = {40, 20, 70, 50, 10, 30, 60};
 	int n = sizeof(in) / sizeof(int);
+
+	node* root = buildTree(pre, in, 0, n-1);
+	levelOrder(root); cout << endl;
+	preorder(root); cout << endl;
+	inorder(root); cout << endl;
 
 	return 0;
 }
