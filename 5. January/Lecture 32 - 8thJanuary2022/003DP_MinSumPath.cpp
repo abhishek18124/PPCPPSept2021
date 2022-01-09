@@ -109,7 +109,6 @@ int main() {
    	cout << minSumTopDown(grid, m-1, n-1, dp) << endl;
    	cout << minSumBottomUp(grid, m, n) << endl;
 
-
 	return 0;
 }
 
